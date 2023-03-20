@@ -1,6 +1,6 @@
 # Tutorial-Bash-Scripting
 
-Las primera linea que escribiras en un archivo de bash script es llamado `shebang`. Esta linea en cualquier script determina la habilidad del script para ser ejecutado como un ejecutable independiente sin tener que teclear sh, bash, python, php, etcetera en la termina.
+Las primera linea que escribiras en un archivo de bash script es llamado `shebang`. Esta linea en cualquier script determina la habilidad del script para ser ejecutado como un ejecutable independiente sin tener que teclear sh, bash, python, php, etcetera en la terminal.
 
 ```bash
 #!/usr/bin/env bash
@@ -67,7 +67,7 @@ ${#varname}     # regresa el largo del valor de la variable como un caracter del
 
 ## 1.4. Funciones
 
-Como en casi todos los lenguajes de prograrmacion, se pueden utilizar funciones para agrupar piezas de codigo de una manera mas logica o para practicar el divino arte de la recursion. Declarar una funcion solo consiste en escribir function mi_funcion { mi_codigo }. Llamar a la funcion es como llamar a cualquier otro programa, solo hay que escribir su nombre.
+Como en casi todos los lenguajes de programacion, se pueden utilizar funciones para agrupar piezas de codigo de una manera mas logica o para practicar el divino arte de la recursion. Declarar una funcion solo consiste en escribir function mi_funcion { mi_codigo }. Llamar a la funcion es como llamar a cualquier otro programa, solo hay que escribir su nombre.
 
 ```bash
 function nombre() {
@@ -88,7 +88,7 @@ function say {
 say "hola mundo!"
 ```
 
-Cuando ejecutas el ejemplo anterior la funcion `hola` enviara como salida "mundo!". Las funciones anteriores `hola` y `say` son identicas. La principal diferencia es que la funcion `say`. Esta funcion, imprime el primer argumento que recibe. Argumentos dentro las funciones son tratados en la misma manera que los argumentos dinamicos que se dan al script.
+Cuando ejecutas el ejemplo anterior la funcion `hola` enviara como salida "mundo!". En cambio, la funcion `say` imprime el primer argumento que recibe. Argumentos dentro las funciones son tratados en la misma manera que los argumentos dinamicos que se dan al script.
 
 ## 1.5. Condicionales
 
@@ -122,10 +122,10 @@ statement1 || statement2  # por lo menos una de las condiciones son verdaderas
 Expresiones para Strings:
 
 ```bash
-str1=str2       # str1 es igual a str2
-str1!=str2      # str1 no es igual a str2
-str1<str2       # str1 es menor que str2
-str1>str2       # str1 es mayor que str2
+str1 = str2       # str1 es igual a str2
+str1 != str2      # str1 no es igual a str2
+str1 < str2       # str1 es menor que str2
+str1 > str2       # str1 es mayor que str2
 -n str1         # str1 no es nulo (tiene una longitud mayor que 0)
 -z str1         # str1 es nulo (tiene una longitud de 0)
 ```
