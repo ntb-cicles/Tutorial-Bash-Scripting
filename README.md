@@ -8,7 +8,7 @@ Las primera linea que escribiras en un archivo de bash script es llamado `sheban
 
 ## 1.1. Variables
 
-Crear variables en bash es similar a otros lenguajes. No existen los tipos de datos. Una variable en bash puede contener un numero, un caracter, una cadena de caracteres, etc. No tienes que declarar una variable, solo asignarle un valor creara la variable.
+Crear variables en bash es similar a otros lenguajes. No existen los tipos de datos. Una variable en bash puede contener un numero, un caracter, una cadena de caracteres (string), etc. No tienes que declarar una variable, solo asignarle un valor creara la variable.
 
 Ejemplo:
 ```bash
@@ -51,9 +51,9 @@ ${varname:+word}    # if varname exists and isn't null, return word; otherwise r
 ${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 ```
 
-## 1.3 Substituir Cadenas
+## 1.3 Manupulación de cadenas de carácteres (strings)
 
-Revisa algunos ejemplos de sintaxis para como manipular cadenas
+Revisa algunos ejemplos de sintaxis para como manipular strings
 
 ```bash
 ${variable#pattern}         # si el patron corresponde al inicio del valor la variable, elimina la parte mas corta que corresponda y regresa el resto 
@@ -62,7 +62,7 @@ ${variable%pattern}         # si el patron corresponde a el final del valor de l
 ${variable%%pattern}        # si el patron corresponde a el final del valor de la variable, elimina la parte mas larga y regresa el resto 
 ${variable/pattern/string}  # el patron mas largo que corresponda en la variable es reemplazado por string. Solo la primera coincidencia es reemplazada.
 ${variable//pattern/string} # el patron mas largo que corresponda en la variable es reemplazado por string. Todas las coincidencias son reemplazadas.
-${#varname}     # regresa el largo del valor de la variable como un caracter de cadena 
+${#varname}     # regresa el largo del valor de la variable como un caracter del string 
 ```
 
 ## 1.4. Funciones
