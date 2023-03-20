@@ -62,10 +62,77 @@ ${variable%pattern}         # si el patron corresponde a el final del valor de l
 ${variable%%pattern}        # si el patron corresponde a el final del valor de la variable, elimina la parte mas larga y regresa el resto 
 ${variable/pattern/string}  # el patron mas largo que corresponda en la variable es reemplazado por string. Solo la primera coincidencia es reemplazada.
 ${variable//pattern/string} # el patron mas largo que corresponda en la variable es reemplazado por string. Todas las coincidencias son reemplazadas.
-${#varname}     # regresa el largo del valor de la variable como un caracter del string 
+${#varname}                 # regresa la longitud del string
 ```
 
-## 1.4. Funciones
+Se puede concatenar strings de dos formas:
+
+```bash
+string1="Hola "
+string2 "Mundo!!"
+
+string_a="$string1$string2"
+
+string_b+=string1
+string_b+=string2
+```
+Tanto `string_a` como `string_b` contienen `Hola Mundo!!` 
+
+## 1.4. Operadores para valores numéricos
+
+Operadores para valores numéricos (**operaciones aritméticas**)
+
+```bash
+a + b           # Operador de suma 
+a - b           # Operador de resta 
+a * b           # Operador de multiplicación 
+a / b           # Operador de división 
+a ** b          # Operador de potenciación 
+a % b           # Operador de módulo 
+
+
+a += b           # Operador de suma y asignación
+a -= b           # Operador de resta y asignación
+a *= b           # Operador de multiplicación y asignación
+a /= b           # Operador de división y asignación
+a %= b           # Operador de módulo y asignación
+
+
+a++             # Operador de incremento. Hace lo mismo que  a+=1
+a--             # Operador de decremento. Hace lo mismo que  a-=1
+```
+
+## 1.4.1 Operando con valores numéricos (IMPORTANTE!)
+
+Bash, por defecto, cuando se opera entre dos variables interpreta siempre que la variables son strings.
+
+Por ejemplo, cuándo realizamos la siguiente operación:
+
+```bash
+valor=5
+valor += 2
+echo $valor
+```    
+El echo imprime `52`, ya que interpreta que las variables son string, y por lo tanto, concatena los dos string.
+
+Si queremos que el resultado sea `7`, debemos envolver la **operación aritmética** con dos paréntesis delante y dos detrás, como en el ejemplo siguiente:
+
+```bash
+valor=5
+((valor += 2))
+echo $valor
+```    
+En este caso, echo imprime `7`, ya que se le ha indicado con `(( OPERACION_ARITMETICA ))` que debe realizar una operación aritmética en vez de una operación con strings.
+
+Si queremos imprimir el resultado de una operación aritmética pero no guardarla, debe hacerse de la forma siguiente:
+
+```bash
+valor=60
+echo Suma de dos valores sin guardar resultado:  $((valor + 15))
+``` 
+En este caso, echo imprime `Suma de dos valores sin guardar resultado: 75`,
+
+## 1.5. Funciones
 
 Como en casi todos los lenguajes de programacion, se pueden utilizar funciones para agrupar piezas de codigo de una manera mas logica o para practicar el divino arte de la recursion. Declarar una funcion solo consiste en escribir function mi_funcion { mi_codigo }. Llamar a la funcion es como llamar a cualquier otro programa, solo hay que escribir su nombre.
 
@@ -82,6 +149,7 @@ function hola {
    echo mundo!
 }
 hola
+
 function say {
     echo $1
 }
@@ -112,14 +180,15 @@ case expression in
     ...
 esac
 ```
-Ejemplos de expresiones:
+
+Expresiones lógicas para bloques de expresiones condicionales (statements):
 
 ```bash
 statement1 && statement2  # ambas condiciones son verdaderas
 statement1 || statement2  # por lo menos una de las condiciones son verdaderas
 ```
 
-Expresiones para Strings:
+Expresiones de comparación para Strings:
 
 ```bash
 str1 = str2       # str1 es igual a str2
@@ -129,7 +198,7 @@ str1 > str2       # str1 es mayor que str2
 -n str1         # str1 no es nulo (tiene una longitud mayor que 0)
 -z str1         # str1 es nulo (tiene una longitud de 0)
 ```
-Expresiones para valores numéricos
+Expresiones de comparación para valores numéricos
 
 ```bash
 -lt     # menor que
@@ -165,10 +234,12 @@ for x := 1 to 10 do
 begin
   statements
 end
+
 for name [in list]
 do
   statements that can use $name
 done
+
 for (( initialisation ; ending condition ; update ))
 do
   statements...
