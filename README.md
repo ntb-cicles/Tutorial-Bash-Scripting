@@ -20,7 +20,7 @@ Ejemplo:
 ```bash
 echo $str   # hola mundo
 ```
-## 1.2. Arreglos
+## 1.2. Arreglos (arrays)
 Como en otros lenguajes, bash tambien tiene arreglos. Un arreglo es una variable que contiene multiples valores. No hay un limite maximo en el tamaño de un arreglo. Los arreglos en bash son base cero. El primer elemento es indexado con elemento 0.Hay varias maneras de crear arreglos en bash las cuales se muestran a continuacion.
 
 Examples:
