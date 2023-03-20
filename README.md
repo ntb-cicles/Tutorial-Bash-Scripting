@@ -113,15 +113,35 @@ case expression in
 esac
 ```
 Ejemplos de expresiones:
+
 ```bash
 statement1 && statement2  # ambas condiciones son verdaderas
 statement1 || statement2  # por lo menos una de las condiciones son verdaderas
+```
+
+Expresiones para Strings:
+
+```bash
 str1=str2       # str1 es igual a str2
 str1!=str2      # str1 no es igual a str2
 str1<str2       # str1 es menor que str2
 str1>str2       # str1 es mayor que str2
 -n str1         # str1 no es nulo (tiene una longitud mayor que 0)
 -z str1         # str1 es nulo (tiene una longitud de 0)
+```
+Expresiones para valores numéricos
+
+```bash
+-lt     # menor que
+-le     # menor o igual que
+-eq     # igual
+-ge     # mayor o igual que
+-gt     # mayor que
+-ne     # no es igual
+```
+Expresiones para ficheros:
+
+```bash
 -a file         # el archivo existe
 -d file         # el archivo existe y es un directorio
 -e file         # el archivo existe, mismo funcionamiento que -a
@@ -135,13 +155,8 @@ str1>str2       # str1 es mayor que str2
 -G file         # el ID del grupo del archivo es igual que el de tu usuario (o en alguno de tus grupos si tienes varios)
 file1 -nt file2     # file1 es mas nuevo que file2
 file1 -ot file2     # file1 es mas viejo que file2
--lt     # menor que
--le     # menor o igual que
--eq     # igual
--ge     # mayor o igual que
--gt     # mayor que
--ne     # no es igual
 ```
+
 ## 1.6. Bucles
 Hay tres tipos de bucles en bash. `for`, `while` y `until`.
 Diferentes sintaxis de `for` :
