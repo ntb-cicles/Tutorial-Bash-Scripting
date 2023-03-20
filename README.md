@@ -102,7 +102,7 @@ a++             # Operador de incremento. Hace lo mismo que  a+=1
 a--             # Operador de decremento. Hace lo mismo que  a-=1
 ```
 
-## 1.4.1 Operando con valores numéricos (IMPORTANTE!)
+### 1.4.1 Operando con valores numéricos (IMPORTANTE!)
 
 Bash, por defecto, cuando se opera entre dos variables interpreta siempre que la variables son strings.
 
@@ -130,7 +130,7 @@ Si queremos imprimir el resultado de una operación aritmética pero no guardarl
 valor=60
 echo Suma de dos valores sin guardar resultado:  $((valor + 15))
 ``` 
-En este caso, echo imprime `Suma de dos valores sin guardar resultado: 75`,
+En este caso, echo imprime `Suma de dos valores sin guardar resultado: 75`
 
 ## 1.5. Funciones
 
@@ -158,7 +158,7 @@ say "hola mundo!"
 
 Cuando ejecutas el ejemplo anterior la funcion `hola` enviara como salida "mundo!". En cambio, la funcion `say` imprime el primer argumento que recibe. Argumentos dentro las funciones son tratados en la misma manera que los argumentos dinamicos que se dan al script.
 
-## 1.5. Condicionales
+## 1.6. Condicionales
 
 Las instrucciones condicionales en bash son similares a otros lenguajes de programacion. Las condiciones tienen muchas formas, como por ejemplo la forma mas basica es `if` expresion `then` instrucciones, donde instrucciones solo se ejecutan si la expresion es verdadera.
 
@@ -226,7 +226,7 @@ file1 -nt file2     # file1 es mas nuevo que file2
 file1 -ot file2     # file1 es mas viejo que file2
 ```
 
-## 1.6. Bucles
+## 1.7. Bucles
 Hay tres tipos de bucles en bash. `for`, `while` y `until`.
 Diferentes sintaxis de `for` :
 ```bash
